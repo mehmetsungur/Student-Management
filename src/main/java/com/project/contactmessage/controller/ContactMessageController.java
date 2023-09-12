@@ -1,7 +1,9 @@
 package com.project.contactmessage.controller;
 
 import com.project.contactmessage.dto.ContactMessageRequest;
+import com.project.contactmessage.dto.ContactMessageResponse;
 import com.project.contactmessage.service.ContactMessageService;
+import com.project.payload.response.ResponseMessage;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -18,6 +20,5 @@ public class ContactMessageController {
 
     @PostMapping("/save") //localhost:8080/contactMessages/save + POST + JSON
     public ResponseMessage<ContactMessageResponse> save(@RequestBody @Valid ContactMessageRequest contactMessageRequest){
-
     }
 }
