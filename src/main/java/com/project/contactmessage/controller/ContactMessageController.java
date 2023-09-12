@@ -1,5 +1,6 @@
 package com.project.contactmessage.controller;
 
+import com.project.contactmessage.dto.ContactMessageRequest;
 import com.project.contactmessage.service.ContactMessageService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.PostMapping;
