@@ -5,7 +5,6 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.Column;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
@@ -18,13 +17,21 @@ import javax.validation.constraints.Size;
 public class ContactMessageRequest {
     @NotNull(message="Please enter name")
     @Size(min=3, max = 16, message = "Name should be at least min 3 chars")
-    @Pattern(regexp =  "\\A(?!\\s*\\Z).+", message = "Your message must consist of the character")
+    @Pattern(regexp =  "\\A(?!\\s*\\Z).+", message = "Your name must consist of the character")
     private String name;
 
     @NotNull(message="Please enter email")
-    @Size(min=5, max = 20, message = "Name should be at least min 5 chars")
+    @Size(min=5, max = 20, message = "Email should be at least min 5 chars")
     @Email(message = "Please enter valid email")
     private String email;
+
+    @NotNull(message="Please enter subject")
+    @Size(min=4, max = 20, message = "Subject should be at least min 4 chars")
+    @Pattern(regexp =  "\\A(?!\\s*\\Z).+", message = "Your subject must consist of the character")
     private String subject;
+
+    @NotNull(message="Please enter message")
+    @Size(min=4, max = 50, message = "Message should be at least min 4 chars")
+    @Pattern(regexp =  "\\A(?!\\s*\\Z).+", message = "Your message must consist of the character")
     private String message;
 }
