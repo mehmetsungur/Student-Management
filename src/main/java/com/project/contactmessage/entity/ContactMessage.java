@@ -1,6 +1,5 @@
 package com.project.contactmessage.entity;
 
-
 import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.*;
 

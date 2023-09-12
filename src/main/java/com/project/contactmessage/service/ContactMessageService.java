@@ -23,7 +23,6 @@ public class ContactMessageService {
     private final ContactMessageMapper contactMessageMapper;
 
     public ResponseMessage<ContactMessageResponse> save(ContactMessageRequest contactMessageRequest) {
-
         ContactMessage contactMessage = contactMessageMapper.requestToContactMessage(contactMessageRequest);
         ContactMessage savedData =  contactMessageRepository.save(contactMessage);
 
