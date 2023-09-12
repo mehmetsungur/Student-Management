@@ -1,5 +1,6 @@
 package com.project.contactmessage.entity;
 
+
 import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.*;
 
@@ -26,7 +27,7 @@ public class ContactMessage {
     private String name;
 
     @NotNull
-    @Email
+    @Email(message = "please enter valid email")
     private String email;
 
     @NotNull
