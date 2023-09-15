@@ -3,9 +3,16 @@ package com.project.entity.business;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.project.entity.enums.Note;
 import com.project.entity.user.User;
+import lombok.*;
 
 import javax.persistence.*;
 
+@Entity
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
+@Builder(toBuilder = true)
 public class StudentInfo {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
