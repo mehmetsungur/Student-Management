@@ -2,6 +2,7 @@ package com.project.entity.user;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.project.entity.enums.Gender;
 import lombok.*;
 
 import javax.persistence.*;
@@ -15,6 +16,7 @@ import java.time.LocalDate;
 @Entity
 @Table(name = "t_user")
 public class User {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -56,4 +58,12 @@ public class User {
     private Boolean isAdvisor;
 
     private Long advisorTeacherId; // bu field student lar icin eklendi
+
+    private Gender gender;
+
+    @OneToOne
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
+    private UserRole userRole;
+
+    // Not: StudentInfo-LessonProgram-Meet
 }
