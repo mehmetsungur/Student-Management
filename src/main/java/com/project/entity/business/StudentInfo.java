@@ -1,6 +1,7 @@
 package com.project.entity.business;
 
 import com.project.entity.enums.Note;
+import com.project.entity.user.User;
 
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -22,4 +23,8 @@ public class StudentInfo {
     private String infoNote;
 
     private Note letterGrade;
+
+    private User teacher;
+
+    private User student;
 }
