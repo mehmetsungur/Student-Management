@@ -32,4 +32,9 @@ public class EducationTerm {
     @Column(name = "end_date")
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
     private LocalDate endDate;
+
+    @NotNull(message = "Last registration date must not be empty")
+    @Column(name = "last_registration_date")
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
+    private LocalDate lastRegistrationDate;
 }
