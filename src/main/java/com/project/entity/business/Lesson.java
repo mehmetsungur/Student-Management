@@ -2,10 +2,8 @@ package com.project.entity.business;
 
 import lombok.*;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.Set;
 
 @Entity
 @Getter
@@ -24,5 +22,6 @@ public class Lesson {
 
     private boolean isCompulsory;
 
-    // Not: LessonProgram
+    @ManyToMany(mappedBy = "lessons", cascade = CascadeType.REMOVE)
+    private Set<LessonProgram> lessonPrograms;
 }

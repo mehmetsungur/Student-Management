@@ -28,5 +28,10 @@ public class LessonProgram {
     private LocalTime endTime;
 
     @ManyToMany
+    @JoinTable(
+            name = "lesson_program_lesson",
+            joinColumns = @JoinColumn(name = "lessonprogram_id"),
+            inverseJoinColumns = @JoinColumn(name = "lesson_id")
+    )
     private Set<Lesson> lessons;
 }
