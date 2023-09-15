@@ -2,9 +2,10 @@ package com.project.entity.user;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.project.entity.business.StudentInfo;
 import com.project.entity.enums.Gender;
 import lombok.*;
-
+import java.util.List;
 import javax.persistence.*;
 import java.time.LocalDate;
 
@@ -66,4 +67,6 @@ public class User {
     private UserRole userRole;
 
     // Not: StudentInfo-LessonProgram-Meet
+    @OneToMany(cascade = CascadeType.REMOVE)
+    private List<StudentInfo> studentInfos;
 }

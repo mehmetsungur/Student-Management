@@ -37,4 +37,7 @@ public class StudentInfo {
     @ManyToOne
     @JsonIgnore
     private User student;
+
+    //Not: Lesson - EducationTerm
+
 }
