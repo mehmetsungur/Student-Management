@@ -2,6 +2,7 @@ package com.project.entity.business;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.project.entity.enums.Note;
+import com.project.entity.user.User;
 
 import javax.persistence.*;
 
