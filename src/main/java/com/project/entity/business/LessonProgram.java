@@ -36,6 +36,6 @@ public class LessonProgram {
     )
     private Set<Lesson> lessons;
 
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.PERSIST)
     private EducationTerm educationTerm;
 }
