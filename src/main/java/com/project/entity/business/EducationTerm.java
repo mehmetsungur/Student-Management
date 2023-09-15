@@ -24,6 +24,12 @@ public class EducationTerm {
     private Term term;
 
     @NotNull(message = "Start date must not be empty")
+    @Column(name = "start_date")
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
     private LocalDate startDate;
+
+    @NotNull(message = "End date must not be empty")
+    @Column(name = "end_date")
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
+    private LocalDate endDate;
 }
