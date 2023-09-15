@@ -1,11 +1,9 @@
 package com.project.entity.business;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.project.entity.enums.Note;
-import com.project.entity.user.User;
 
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 public class StudentInfo {
     @Id
@@ -24,7 +22,11 @@ public class StudentInfo {
 
     private Note letterGrade;
 
+    @ManyToOne
+    @JsonIgnore
     private User teacher;
 
+    @ManyToOne
+    @JsonIgnore
     private User student;
 }
