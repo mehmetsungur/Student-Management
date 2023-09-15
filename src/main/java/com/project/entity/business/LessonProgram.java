@@ -1,10 +1,11 @@
 package com.project.entity.business;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.project.entity.enums.Day;
 import lombok.*;
-
+import java.util.Set;
 import javax.persistence.*;
-import javax.validation.constraints.NotNull;
+import java.time.LocalTime;
 
 @Entity
 @Getter
@@ -17,7 +18,15 @@ public class LessonProgram {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @NotNull(message = "Day must not be empty")
     @Enumerated(EnumType.STRING)
     private Day day;
+
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "HH:mm", timezone = "US")
+    private LocalTime startTime;
+
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "HH:mm", timezone = "US")
+    private LocalTime endTime;
+
+    @ManyToMany
+    private Set<Lesson> lessons;
 }
