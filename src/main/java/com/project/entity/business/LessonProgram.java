@@ -35,4 +35,7 @@ public class LessonProgram {
             inverseJoinColumns = @JoinColumn(name = "lesson_id")
     )
     private Set<Lesson> lessons;
+
+    @ManyToOne
+    private EducationTerm educationTerm;
 }
