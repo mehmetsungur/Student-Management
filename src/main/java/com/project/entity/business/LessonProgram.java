@@ -3,9 +3,10 @@ package com.project.entity.business;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.project.entity.enums.Day;
 import lombok.*;
-import java.util.Set;
+
 import javax.persistence.*;
 import java.time.LocalTime;
+import java.util.Set;
 
 @Entity
 @Getter

@@ -1,5 +1,6 @@
 package com.project.entity.business;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.*;
 
 import javax.persistence.*;
@@ -22,6 +23,7 @@ public class Lesson {
 
     private boolean isCompulsory;
 
+    @JsonIgnore
     @ManyToMany(mappedBy = "lessons", cascade = CascadeType.REMOVE)
     private Set<LessonProgram> lessonPrograms;
 }
