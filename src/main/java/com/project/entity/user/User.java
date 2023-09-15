@@ -5,9 +5,10 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.project.entity.business.StudentInfo;
 import com.project.entity.enums.Gender;
 import lombok.*;
-import java.util.List;
+
 import javax.persistence.*;
 import java.time.LocalDate;
+import java.util.List;
 
 @Getter
 @Setter
@@ -17,7 +18,6 @@ import java.time.LocalDate;
 @Entity
 @Table(name = "t_user")
 public class User {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -67,6 +67,6 @@ public class User {
     private UserRole userRole;
 
     // Not: StudentInfo-LessonProgram-Meet
-    @OneToMany(cascade = CascadeType.REMOVE)
-    private List<StudentInfo> studentInfos;
+    @OneToMany(mappedBy = "teacher",cascade = CascadeType.REMOVE)
+    private List<StudentInfo> studentInfos; // set olabilir ??
 }
