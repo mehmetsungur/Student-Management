@@ -31,7 +31,6 @@ public class ContactMessageService {
     private final ContactMessageMapper contactMessageMapper;
 
     public ResponseMessage<ContactMessageResponse> save(ContactMessageRequest contactMessageRequest) {
-
         ContactMessage contactMessage = contactMessageMapper.requestToContactMessage(contactMessageRequest);
         ContactMessage savedData =  contactMessageRepository.save(contactMessage);
 
@@ -40,7 +39,6 @@ public class ContactMessageService {
                 .httpStatus(HttpStatus.CREATED)
                 .object(contactMessageMapper.contactMessageToResponse(savedData))
                 .build();
-
     }
 
     // Not: getAll() *************************************************

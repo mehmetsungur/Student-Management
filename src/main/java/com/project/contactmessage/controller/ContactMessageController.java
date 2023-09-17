@@ -24,7 +24,7 @@ public class ContactMessageController {
     // Not: save() **************************************************
     /**
      * {
-     *     "name": "Mehmet",
+     *     "name": "Mirac",
      *     "email": "aaa@bbb.com",
      *     "subject": "deneme",
      *     "message": "this is my message"
@@ -90,7 +90,6 @@ public class ContactMessageController {
         return ResponseEntity.ok(contactMessageService.getContactMessageById(contactMessageId));
     }
 
-
     // Not: getById *********************************************
     @GetMapping("/getById/{contactMessageId}") // http://localhost:8080/contactMessages/getById/1  + GET
     public ResponseEntity<ContactMessage> getByIdPath(@PathVariable Long contactMessageId){
@@ -103,7 +102,6 @@ public class ContactMessageController {
                                                                               @RequestBody @NotNull ContactMessageUpdateRequest contactMessageUpdateRequest) {
         return ResponseEntity.ok(contactMessageService.updateById(contactMessageId, contactMessageUpdateRequest));
     }
-
 
     // Not: Odev --> searchByDateBetween ************************
     @GetMapping("/searchBetweenDates") // http://localhost:8080/contactMessages/searchBetweenDates?beginDate=2023-09-13&endDate=2023-09-15

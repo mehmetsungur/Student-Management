@@ -9,7 +9,9 @@ import java.time.LocalDateTime;
 
 @Component
 public class ContactMessageMapper {
+
     public ContactMessage requestToContactMessage(ContactMessageRequest contactMessageRequest){
+
         return ContactMessage.builder()
                 .name(contactMessageRequest.getName())
                 .subject(contactMessageRequest.getSubject())
@@ -17,7 +19,6 @@ public class ContactMessageMapper {
                 .email(contactMessageRequest.getEmail())
                 .dateTime(LocalDateTime.now())
                 .build();
-
     }
 
     public ContactMessageResponse contactMessageToResponse(ContactMessage contactMessage){

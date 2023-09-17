@@ -15,7 +15,6 @@ import java.util.List;
 public interface ContactMessageRepository extends JpaRepository<ContactMessage, Long> {
     Page<ContactMessage> findByEmailEquals(String email, Pageable pageable);
     Page<ContactMessage> findBySubjectEquals(String subject, Pageable pageable);
-
     /*
         FUNCTION('DATE', c.dateTime): Bu bölüm, c.dateTime alanının tarih bileşenini çıkarmak için kullanılır.
         c.dateTime bir tarih-saat nesnesi içerdiğinden ve bu sorgu yalnızca tarih bileşenini kullanmak istediğinden,

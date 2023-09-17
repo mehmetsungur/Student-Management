@@ -41,6 +41,6 @@ public class StudentInfo {
     @ManyToOne
     private Lesson lesson;
 
-    //Not: Lesson - EducationTerm
-
+    @OneToOne
+    private EducationTerm educationTerm;
 }
